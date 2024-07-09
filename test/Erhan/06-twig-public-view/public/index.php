@@ -32,6 +32,8 @@ $twig = new Environment($loader, [
     'debug' => true,
 ]);
 
+$twig->addExtension(new \Twig\Extension\DebugExtension());
+
 // connexion à la database singleton
 $db = OurPDO::getInstance( DB_TYPE.":host=".DB_HOST.";dbname=".DB_NAME.";port=".DB_PORT.";charset=".DB_CHARSET,
     DB_LOGIN,
